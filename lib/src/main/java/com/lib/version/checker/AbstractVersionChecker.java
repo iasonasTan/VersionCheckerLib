@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.net.Uri;
+import android.util.Log;
 
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
@@ -35,13 +36,17 @@ public abstract class AbstractVersionChecker {
 
     public void checkVersion() {
         try {
+            Log.d("avc-vc-lib", "Checking for newer versions...");
             String latestVersion = requestVersionFromServer();
+            Log.d("avc-vc-lib", "Version from server: "+latestVersion);
             String appVersion = getApplicationVersion();
+            Log.d("avc-vc-lib", "App version: "+latestVersion);
             if(needsUpdate(appVersion, latestVersion))
                 showUpdateDialog();
-        } catch (Exception ignored) {
+            Log.d("avc-vc-lib", "Check - complete.");
+        } catch (Exception e) {
             // causes: no internet, DNS problem or server is closed
-            // ignore, no version check
+            Log.d("avc-vc-lib", "Could not check for newer versions cause: "+e.getClass().getSimpleName()+", message: "+e.getMessage());
         }
     }
 
