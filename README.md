@@ -49,6 +49,12 @@ And then you call:
 new VersionChecker(this).checkVersionAsynchronously();
 ```
 
+**NOTE**: If something isn't working right, try adding
+```
+tools:replace="android:theme"
+```
+in your `AndroidManifest.xml` in <application> tag.
+
 If there's a new version, a MaterialAlertDialog will show with two options.
 
 Option 1: Takes user to download page.
