@@ -55,4 +55,4 @@ Option 1: Takes user to download page.
 
 Option 2: Dismisses dialog but shows normally next time.
 
-![img.png](img.png)
+[<img src="img.png" width="500"/>](img.png)
