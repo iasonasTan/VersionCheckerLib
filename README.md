@@ -8,6 +8,13 @@ That library requires:
 2. Material Dialog `import com.google.android.material.dialog.MaterialAlertDialogBuilder;`
 
 ## How to use it?
+First, add the dependency in `build.gradle` (app module)
+```implementation 'com.github.iasonasTan:VersionCheckerLib:vX.X.X'```
+And then modify `settings.gradle`
+Add `maven { url 'https://jitpack.io' }` inside of:
+1. pluginManagement -> repositories
+2. dependencyResolutionManagement -> repositories
+
 You have to extend abstract class
 `com.lib.version.checker.AbstractVersionChecker`
 and implement required methods.
